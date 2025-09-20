@@ -153,4 +153,84 @@ Or use in **Google Colab** with Google Drive integration.
 
 ---
 
+# 4) 🎵 Music Genre Classification
+
+## 📌 Project Overview
+
+This project explores two different approaches to classifying music genres:
+
+1. **Tabular Data Approach**
+
+   * Uses numerical audio features extracted from the dataset (e.g., tempo, spectral centroid, zero-crossing rate, MFCC statistics).
+   * Models are trained on these structured features.
+
+2. **Image-Based Approach**
+
+   * Converts audio files into **spectrogram images**.
+   * Uses transfer learning with deep CNN architectures (e.g., ResNet, MobileNet) to classify genres from visual patterns.
+
+By comparing these two approaches, we highlight the trade-offs between **traditional feature-based methods** and **deep learning with image representations**.
+
+---
+
+## 🗂 Dataset
+
+* **Source**: GTZAN / equivalent music dataset.
+* **Classes**: 10 genres (e.g., classical, jazz, metal, pop, rock, reggae, country, blues, hip-hop, disco).
+* **Samples**: \~1000 audio tracks (30s each).
+
+---
+
+## 📊 Results
+
+### **Tabular Data (Feature-based)**
+
+* Accuracy: **\~74–80%**.
+* Strengths: Lightweight, interpretable.
+* Weaknesses: Limited ability to capture temporal/complex audio patterns.
+
+### **Image-Based (Spectrograms + CNN)**
+
+* Accuracy: **\~90–95%** with deep CNNs.
+* Strengths: Captures richer temporal & spectral features automatically.
+* Weaknesses: Computationally expensive, requires GPUs and longer training time.
+---
+
+## 🔄 Comparison: Tabular Features vs. Spectrogram Images for Music Genre Classification
+
+| Aspect                      | **Tabular (Features)**                                 | **Image-based (Spectrograms)**                                  |
+|-----------------------------|---------------------------------------------------------|------------------------------------------------------------------|
+| **Input Data**              | Handcrafted numerical features (MFCC, tempo, etc.)     | Mel-spectrogram images (visual representation of audio)         |
+| **Model Type**              | Traditional ML (SVM, Decision Trees, etc.)             | Deep Learning (CNNs, e.g., ResNet, custom CNNs)                  |
+| **Accuracy (in this project)** | ✅ **76.5%**                                           | ⚠️ **65.0%**                                                     |
+| **Training Time**           | Fast (few seconds to minutes)                          | Slower (minutes to hours depending on model size)                |
+| **Resource Requirement**    | Low — CPU sufficient                                   | High — GPU recommended                                          |
+| **Feature Engineering**     | Required (manual extraction via Librosa, etc.)         | Not needed — CNNs learn features automatically                  |
+| **Interpretability**        | High — each feature has meaning                        | Low — CNN filters are not human-interpretable                   |
+| **Scalability**             | Suitable for small datasets                           | Performs better with large datasets                             |
+| **Robustness to Noise**     | Lower — sensitive to feature extraction errors         | Higher — CNNs can generalize better with augmentation           |
+| **Flexibility**             | Limited to chosen features                            | Flexible — model can learn from raw patterns                    |
+| **Best Genres (in this project)** | Classical, Pop, Jazz                           | Reggae, Jazz, Metal                                              |
+| **Worst Genres (in this project)**| Rock, Disco                                  | Rock, Hiphop, Blues                                              |
+
+
+## 🔢 Confusion Metrices
+### SVM Confusion Matrix
+<img width="550" height="500" alt="image" src="https://github.com/user-attachments/assets/17088c4d-2c51-4eff-821d-a450147ca0eb" />
+
+### CNN Confusion Matrix
+<img width="550" height="500" alt="image" src="https://github.com/user-attachments/assets/0af5ef9e-14af-4dd2-8b34-1f7cb20789a9" />
+
+
+---
+
+## 🚀 Conclusion
+
+* **Tabular approach** is efficient, interpretable, and good for quick experiments.
+* **Image-based approach** significantly outperforms in classification accuracy and ranking metrics, making it more suitable for real-world deployment.
+* Depending on resources, one can start with tabular models and scale up to spectrogram-based CNNs for state-of-the-art performance.
+
+
+---
+
 
