@@ -1,6 +1,6 @@
 # Elevvo Tasks
 
-## 📊 Loan Approval Prediction
+# 1) 📊 Loan Approval Prediction
 
 This notebook builds a machine learning model to **predict loan approval status** based on applicant financial, credit, and employment information. The project uses a cleaned dataset from Kaggle and compares Logistic Regression and Decision Tree model.
 
@@ -46,7 +46,7 @@ This notebook builds a machine learning model to **predict loan approval status*
 
 ---
 
-## 🤖 Model Comparison: Logistic Regression vs. Decision Tree
+### 🤖 Model Comparison: Logistic Regression vs. Decision Tree
 
 | Model               | Accuracy | ROC-AUC |
 | ------------------- | -------- | ------- |
@@ -68,3 +68,89 @@ This notebook builds a machine learning model to **predict loan approval status*
   * `kagglehub` (for dataset download)
 
 ---
+
+
+
+
+# 3) 🎬 Movie Recommendation System
+
+This project builds a personalized movie recommender system using collaborative filtering. It uses the MovieLens dataset (movies and ratings) and evaluates the model using precision-based metrics.
+
+---
+
+### 📂 Dataset
+
+The dataset (MovieLens 100K Dataset) contains:
+
+* **movies.csv** — movie titles and genres.
+* **ratings.csv** — user ratings for each movie.
+
+---
+
+### 🧠 Recommendation Model
+
+The system follows these major steps:
+
+1. **Data Loading & Merging**
+
+   * Merge `ratings.csv` with `movies.csv` on `movieId`.
+2. **Data Preprocessing**
+
+   * Handle missing values and prepare the user-item matrix.
+3. **Modeling**
+
+   * Build a recommendation engine using collaborative filtering with cosine similarity.
+   * Evaluate using Precision\@K.
+4. **Prediction**
+
+   * Generate movie recommendations for sample users.
+
+---
+
+### 📈 Evaluation Results
+
+**✅ Precision\@10:**
+
+```
+Average Precision@10: 0.2310
+```
+
+This indicates that on average, 23.1% of the top 10 recommended movies for a user were relevant.
+
+---
+
+### 🌟 Top 5 Highest Predicted Movies
+
+Based on the trained model, the following movies received the highest average predicted ratings:
+
+| Movie Title                                        | Predicted Rating |
+| -------------------------------------------------- | ---------------- |
+| Aliens (1986)                                      | 4.40             |
+| Office Space (1999)                                | 4.40             |
+| Austin Powers: International Man of Mystery (1997) | 4.39             |
+| Terminator, The (1984)                             | 4.29             |
+| Jaws (1975)                                        | 3.98             |
+
+---
+
+## 📌 Requirements
+
+Install dependencies via:
+
+```bash
+pip install pandas scikit-learn
+```
+
+Or use in **Google Colab** with Google Drive integration.
+
+---
+
+## 🏁 How to Run
+
+1. Upload the dataset to your Google Drive.
+2. Mount your drive in Colab.
+3. Run the notebook `Movie_Recommendation_System.ipynb` step by step.
+
+---
+
+
