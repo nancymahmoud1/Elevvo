@@ -201,8 +201,8 @@ By comparing these two approaches, we highlight the trade-offs between **traditi
 | Aspect                      | **Tabular (Features)**                                 | **Image-based (Spectrograms)**                                  |
 |-----------------------------|---------------------------------------------------------|------------------------------------------------------------------|
 | **Input Data**              | Handcrafted numerical features (MFCC, tempo, etc.)     | Mel-spectrogram images (visual representation of audio)         |
-| **Model Type**              | Traditional ML (SVM, Decision Trees, etc.)             | Deep Learning (CNNs, e.g., ResNet, custom CNNs)                  |
-| **Accuracy (in this project)** | ✅ **76.5%**                                           | ⚠️ **65.0%**                                                     |
+| **Model Type**              | Traditional ML (SVM)                                   | Deep Learning (custom CNNs)                                    |
+| **Accuracy (in this project)** | ✅ **76.5%**                                        | ⚠️ **65.0%**                                                     |
 | **Training Time**           | Fast (few seconds to minutes)                          | Slower (minutes to hours depending on model size)                |
 | **Resource Requirement**    | Low — CPU sufficient                                   | High — GPU recommended                                          |
 | **Feature Engineering**     | Required (manual extraction via Librosa, etc.)         | Not needed — CNNs learn features automatically                  |
