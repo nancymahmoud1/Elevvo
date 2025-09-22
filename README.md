@@ -318,16 +318,3 @@ By comparing these two approaches, we highlight the trade-offs between **traditi
 
 ---
 
-
-## 📌 Requirements
-
-Install dependencies via:
-
-```bash
-pip install pandas scikit-learn
-```
-
-Or use in **Google Colab** with Google Drive integration.
-
----
-
