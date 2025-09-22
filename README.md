@@ -43,7 +43,6 @@ This notebook builds a machine learning model to **predict loan approval status*
 
      * Confusion matrices
      * ROC Curves
-
 ---
 
 ### 🤖 Model Comparison: Logistic Regression vs. Decision Tree
@@ -70,7 +69,106 @@ This notebook builds a machine learning model to **predict loan approval status*
 ---
 
 
+# 2) 📘 Traffic Sign Recognition
 
+## 🚦 Project Overview
+
+This project implements a **Traffic Sign Recognition system** using deep learning. The goal is to classify traffic signs from image data into their correct categories. Two approaches were tested:
+
+1. **Custom CNN Model** – built from scratch with multiple convolutional, pooling, and dense layers.
+2. **MobileNet Transfer Learning** – leveraging a pre-trained MobileNet architecture with fine-tuning.
+
+---
+
+## 📊 Dataset
+
+* The dataset consists of labeled images of traffic signs.
+* Images are preprocessed (resizing, normalization, augmentation) before training.
+* Data is split into **train**, **validation**, and **test** sets.
+
+---
+
+## ⚙️ Model Architectures
+
+### 1. Custom CNN
+
+* Multiple convolutional + pooling layers.
+* Batch normalization and dropout for regularization.
+* Fully connected layers with softmax output.
+
+### 2. MobileNet (Transfer Learning)
+
+* Pretrained MobileNet (on ImageNet).
+* Fine-tuned with traffic sign dataset.
+* Added dense classification head.
+
+---
+
+## 📈 Results
+
+| Model       | Accuracy   | Loss   | Notes                                        |
+| ----------- | ---------- | ------ | -------------------------------------------- |
+| Custom CNN  | **0.9907** | 0.0559 | Very high performance, strong generalization |
+| MobileNetV2 | **0.6250** | 1.1910 | Underperformed, struggled to adapt           |
+
+---
+
+## 🔍 Confusion Matrices
+
+Below is a direct comparison between the **Custom CNN** and **MobileNetV2** performance across all 43 classes:
+
+<img width="2297" height="989" alt="image" src="https://github.com/user-attachments/assets/fc74b82f-1e21-4803-aaa8-56d28b6e518b" />
+
+* **Custom CNN (left)**: Almost perfect diagonal → excellent classification across all traffic sign categories.
+* **MobileNetV2 (right)**: Weak diagonal, many misclassifications → poor generalization on this dataset.
+
+---
+
+## 🖼️ Prediction Visualization (Custom CNN)
+
+Sample predictions from the test set:
+
+* Left to right:
+
+  * Correctly predicted traffic signs with true vs predicted labels.
+  * The model demonstrates robust recognition even on low-quality images.
+
+<img width="950" height="223" alt="image" src="https://github.com/user-attachments/assets/fbf8c369-c708-492b-9eaf-a794dc5cd068" />
+
+---
+
+## 🔍 Comparison
+
+* **Custom CNN**:
+
+  * Strength: Excellent accuracy (\~99%), robust learning from dataset.
+  * Weakness: Training took slightly longer per epoch.
+
+* **MobileNetV2**:
+
+  * Strength: Lightweight architecture, designed for mobile deployment.
+  * Weakness: Performed poorly on this dataset (accuracy only \~62%). Likely due to mismatch between ImageNet pretraining and traffic sign dataset without sufficient fine-tuning.
+
+✅ **Conclusion**: Contrary to expectations, the **Custom CNN clearly outperformed MobileNetV2** on this dataset. For practical deployment, the Custom CNN is the recommended model.
+
+---
+
+## 🚀 Usage
+
+Run the notebook:
+
+```bash
+jupyter notebook Traffic_Sign_Recognition.ipynb
+```
+
+---
+## 🛠️ Requirements
+
+* Python 3.8+
+* TensorFlow / Keras
+* NumPy
+* Matplotlib
+* scikit-learn
 
 # 3) 🎬 Movie Recommendation System
 
@@ -130,18 +228,6 @@ Based on the trained model, the following movies received the highest average pr
 | Austin Powers: International Man of Mystery (1997) | 4.39             |
 | Terminator, The (1984)                             | 4.29             |
 | Jaws (1975)                                        | 3.98             |
-
----
-
-## 📌 Requirements
-
-Install dependencies via:
-
-```bash
-pip install pandas scikit-learn
-```
-
-Or use in **Google Colab** with Google Drive integration.
 
 ---
 
@@ -221,7 +307,6 @@ By comparing these two approaches, we highlight the trade-offs between **traditi
 ### CNN Confusion Matrix
 <img width="550" height="500" alt="image" src="https://github.com/user-attachments/assets/0af5ef9e-14af-4dd2-8b34-1f7cb20789a9" />
 
-
 ---
 
 ## 🚀 Conclusion
@@ -233,4 +318,16 @@ By comparing these two approaches, we highlight the trade-offs between **traditi
 
 ---
 
+
+## 📌 Requirements
+
+Install dependencies via:
+
+```bash
+pip install pandas scikit-learn
+```
+
+Or use in **Google Colab** with Google Drive integration.
+
+---
 
